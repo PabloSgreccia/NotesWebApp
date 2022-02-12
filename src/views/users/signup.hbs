@@ -6,33 +6,17 @@
         <div class="card-body">
             <form action="/users/signup" method="POST">
                 <div class="form-group">
-                        <input type="text" class="form-control" placeholder="User Name" name="name" 
-                        {{#if name}}
-                            value="{{name}}"
-                        {{/if}}
-                        >
+                        <input type="text" class="form-control" placeholder="User Name" name="name" value="{{name}}">
                 </div>
                 <div class="form-group pt-2">
-                        <input type="email" class="form-control" placeholder="Email" name="email" 
-                        {{#if email}}
-                            value="{{email}}"
-                        {{/if}}
-                        >
+                        <input type="email" class="form-control" placeholder="Email" name="email" value="{{email}}">
                 </div>
                 <div class="form-group pt-2">
-                        <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd"
-                        {{#if pwd}}
-                            value="{{pwd}}"
-                        {{/if}}
-                        >
+                        <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd"value="{{pwd}}">
                         <i class="bi bi-eye-slash-fill" id="show-pwd-img"></i>
                 </div>
                 <div class="form-group pt-2">
-                        <input type="password" class="form-control" placeholder="Repeat Password" name="confirmPwd"  id="confirmPwd"
-                        {{#if confirmPwd}}
-                            value="{{confirmPwd}}"
-                        {{/if}}
-                        >
+                        <input type="password" class="form-control" placeholder="Repeat Password" name="confirmPwd"  id="confirmPwd"value="{{confirmPwd}}">
                         <i class="bi bi-info-circle" id="correct-pwd" title=""></i>
                 </div>
                 <div class="form-group pt-2">
@@ -48,4 +32,4 @@
     </div>
 </div>
 
-<script src="/showPwd.js"></script>
+<script src="/passwordInputSettings.js"></script>

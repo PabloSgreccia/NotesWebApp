@@ -1,5 +1,4 @@
-
-
+// show passwords
 document.getElementById('show-pwd-img').addEventListener('mouseover', ()=>{
     document.getElementById('pwd').type = 'text';
     document.getElementById('confirmPwd').type = 'text';
@@ -12,6 +11,7 @@ document.getElementById('show-pwd-img').addEventListener('mouseout', ()=>{
     document.getElementById('show-pwd-img').className = 'bi bi-eye-slash-fill';
 })
 
+// validate passwords (only to show the check)
 document.getElementById('pwd').addEventListener('input', ()=>{
     hiddenCheckAttribute();
 })
@@ -35,11 +35,10 @@ function hiddenCheckAttribute(){
 }
 
 function containsSpecialChars(password){
-    var strongRegex = new RegExp("^(?=.*[.,?!@#\$%\^&\*])(?=.{5,})");
+    const strongRegex = new RegExp("^(?=.*[.,?!@#\$%\^&\*])(?=.{5,})");
 
     if(strongRegex.test(password)) {
         return true;
-    } else{
-        return false;
-    }
+    } 
+    return false;
 }
