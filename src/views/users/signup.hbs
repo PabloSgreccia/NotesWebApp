@@ -6,32 +6,34 @@
         <div class="card-body">
             <form action="/users/signup" method="POST">
                 <div class="form-group">
-                    {{#if name}}
-                        <input type="text" class="form-control" placeholder="User Name" name="name" value="{{name}}">
-                    {{else}}
-                        <input type="text" class="form-control" placeholder="User Name" name="name">
-                    {{/if}}
+                        <input type="text" class="form-control" placeholder="User Name" name="name" 
+                        {{#if name}}
+                            value="{{name}}"
+                        {{/if}}
+                        >
                 </div>
                 <div class="form-group pt-2">
-                    {{#if email}}
-                        <input type="email" class="form-control" placeholder="Email" name="email" value="{{email}}">
-                    {{else}}
-                        <input type="email" class="form-control" placeholder="Email" name="email">
-                    {{/if}}
+                        <input type="email" class="form-control" placeholder="Email" name="email" 
+                        {{#if email}}
+                            value="{{email}}"
+                        {{/if}}
+                        >
                 </div>
                 <div class="form-group pt-2">
-                    {{#if pwd}}
-                        <input type="password" class="form-control" placeholder="Password" name="pwd" value="{{pwd}}">
-                    {{else}}
-                        <input type="password" class="form-control" placeholder="Password" name="pwd">
-                    {{/if}}
+                        <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd"
+                        {{#if pwd}}
+                            value="{{pwd}}"
+                        {{/if}}
+                        >
+                        <i class="bi bi-eye-slash-fill" id="show-pwd-img"></i>
                 </div>
                 <div class="form-group pt-2">
-                    {{#if confirmPwd}}
-                        <input type="password" class="form-control" placeholder="Repeat Password" name="confirmPwd" value="{{confirmPwd}}"> 
-                    {{else}}
-                        <input type="password" class="form-control" placeholder="Repeat Password" name="confirmPwd"> 
-                    {{/if}}
+                        <input type="password" class="form-control" placeholder="Repeat Password" name="confirmPwd"  id="confirmPwd"
+                        {{#if confirmPwd}}
+                            value="{{confirmPwd}}"
+                        {{/if}}
+                        >
+                        <i class="bi bi-check-all" id="correct-pwd" hidden></i>
                 </div>
                 <div class="form-group pt-2">
                     <button class="btn btn-primary col-12" type="submit">Create Account</button>
@@ -45,3 +47,5 @@
         </div>
     </div>
 </div>
+
+<script src="/showPwd.js"></script>

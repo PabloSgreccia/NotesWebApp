@@ -81,4 +81,10 @@ p{
     overflow-y: hidden;
   }
 
-  
+#show-pwd-img, #correct-pwd{
+    position: relative;
+    top: -30px;
+    right: 10px;
+    float:  right;
+    height: 0px;
+}

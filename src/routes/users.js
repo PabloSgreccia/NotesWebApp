@@ -15,7 +15,7 @@ router.post('/users/signup', (req, res) => {
 
     const {name, email, pwd, confirmpwd} = req.body;
     if((name == "") || (email == "") || (pwd == "") || (confirmpwd == "")){
-        let message = "You must fill all fields to create a new note.";
+        let message = "You must fill all fields to create a user.";
         res.render("users/signup", {name, email, pwd, confirmpwd, message});
     }
     else if(pwd != confirmpwd){

@@ -20,5 +20,5 @@ src/models --> definir tipos de datos
 src/helpers --> funciones que para reutilizar
 src/config --> archivos varios (configuracion de variables de entorno, de la base de datos, de la forma que se hace la autenticación)
 
-Para iniciar el servidor: 
-    - nodemon src/index.js
+Run the server: 
+    - npm run dev
