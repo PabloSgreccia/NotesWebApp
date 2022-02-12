@@ -1,0 +1,84 @@
+body {
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#empty-input, #empty-input-modal{
+    color: #B03A2E;
+    background-color: #FADBD8;
+    border-radius: 5px;
+    text-align: center;
+    font-size: small;
+    padding: 1%;
+}
+
+#note-title{
+    font-size: 20px;
+}
+
+#new-note-form{
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+@media (min-width: 800px){
+    #new-note-form{
+    float: left;
+        position: fixed;
+    }
+}
+
+#notes-list{
+    margin: auto;
+}
+
+@media (min-width: 800px){
+    #notes-list{
+        float: right;
+    }
+}
+
+#main-page{
+    margin:  2%;
+}
+
+/* #navigation{
+    color:red;
+    top:0;
+    Width: 100%;
+    background-color: #151525;
+    padding: 1% 0;
+    margin-bottom: 1%;
+    display: inline-block;
+} */
+
+/* #footer{
+    clear: both;
+    position: absolute;  
+    color:red;
+    bottom:0; 
+    Width: 100%;
+    background-color: #151525;
+    padding: 1% 0;
+}  */
+
+p{
+    margin-bottom: 0px;
+}
+
+.btn-delete-note{
+    background-color:rgb(221, 147, 147);
+    border-color:rgb(221, 147, 147);
+}
+
+.btn-edit-note{
+    background-color:rgb(147, 173, 221);
+    border-color:rgb(147, 173, 221);
+}
+
+.modal-open {
+    overflow-y: hidden;
+  }
+
+  

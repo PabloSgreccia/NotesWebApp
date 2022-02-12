@@ -1,0 +1,91 @@
+<!-- new note form -->
+<!-- new note form -->
+<!-- new note form -->
+
+<div class="col-md-3" id="new-note-form">
+    <div class="card">
+        <div class="card-header">New Note</div>
+        <div class="card-body" id="card-form">
+            <form action="/notes/newNote" method="POST">
+                <div class="form-group">
+                    <input type="text" name="title" class="form-control newNoteAttribute" placeholder="Title" autofocus>
+                </div>
+                <div class="form-group pt-2">
+                    <textarea type="text" name="description" class="form-control newNoteAttribute" placeholder="Description" rows="3"></textarea>
+                </div>
+                <div class="form-group pt-2">
+                    <button class="btn btn-primary col-12" type="submit" id="submit-note">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- List of notes -->
+<!-- List of notes -->
+<!-- List of notes -->
+
+<div class="col-md-8" id="notes-list">
+    <div class="row">
+        {{#each notes}}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <b id="note-title">{{title}}</b>
+                </div>
+                <div class="card-body">
+                    <p id="note-description">{{description}}</p>
+                    <div class="d-flex flex-row-reverse align-items-center">
+                        <a href="/notes/deleteNote/{{_id}}" class="btn btn-danger btn-delete-note btn-sm col-2">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                        <a class="btn btn-primary btn-edit-note btn-sm col-2 mx-1" data-toggle="modal" data-target="#edit-note-modal">
+                            <i class="bi bi-pencil-square img-edit-note"></i>
+                        </a>
+                        <span id="note-id" hidden>{{_id}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<!-- Modal -->
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="edit-note-modal" tabindex="-1" role="dialog" aria-labelledby="edit-note-modal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><b>Edit Note</b></h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+        <div class="modal-body" id="modal-body">
+            <form action="/notes/editNote" method="POST">
+                <div class="form-group">
+                    <input type="text" name="titleEdit" class="form-control modifiedNoteAttribute" id="title-edit" placeholder="Title">
+                </div>
+                <div class="form-group pt-2">
+                    <textarea type="text" name="descriptionEdit" class="form-control modifiedNoteAttribute" id="description-edit" placeholder="Description" rows="3"></textarea>
+                </div>
+                <input type="hidden" name="noteIdEdit" id="note-id-edit" hidden>
+                <div class="form-group pt-2">
+                    <button class="btn btn-primary col-12" type="submit" id="submit-note-modal">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="/toastr/toastr.min.js"></script>
+<script src="/newNoteValidator.js"></script>
+<script src="/editNote.js"></script>
+<script src="/toastrValidator.js"></script>
