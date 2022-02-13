@@ -9,13 +9,13 @@ router.get('/notes/add', isAuthenticated, async (req, res) =>{
     const notes = await Note.find({"user": req.user.id}).lean().sort({date: -1});
     const userName = req.user.name;
     if(notes.length == 0){
-        const title = `Hi ${req.user.name}`;
-        const description = "Yo don't have any notes.";
-        const newNote = new Note({title, description});
-        newNote.user = req.user.id;
-        await newNote.save();   
-        const notes = await Note.find({"user": req.user.id}).lean().sort({date: -1});
-        res.render('notes/newNote',  { notes, userName })
+        // const title = `Hi ${req.user.name}`;
+        // const description = "Yo don't have any notes.";
+        // const newNote = new Note({title, description});
+        // newNote.user = req.user.id;
+        // await newNote.save();   
+        // const notes = await Note.find({"user": req.user.id}).lean().sort({date: -1});
+        res.render('notes/newNote',  { userName })
     }
     else{
         res.render('notes/newNote',  { notes, userName })
