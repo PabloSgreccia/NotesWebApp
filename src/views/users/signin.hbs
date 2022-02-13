@@ -9,16 +9,23 @@
                         <input type="email" class="form-control" placeholder="Email" name="email">
                 </div>
                 <div class="form-group pt-3">
-                        <input type="password" class="form-control" placeholder="Password" name="pwd">
+                        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
                         <i class="bi bi-eye-slash-fill" id="show-pwd-img"></i>
                 </div>
                 <div class="form-group pt-3">
                     <button class="btn btn-primary col-12" type="submit">Sign In</button>
                 </div>
+                {{#if error}}
+                <div class="container mt-2" id="empty-input">
+                    {{error}}
+                </div>
+                {{/if}}
             </form>
         </div>
     </div>
 </div>
 
+
 <script src="/toastr/toastr.min.js"></script>
-<script src="/toastrValidator.js"></script>
+<script src="/scripts/toastrValidator.js"></script>
+<script src="/scripts/showPassword.js"></script>
