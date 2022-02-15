@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router(); 
 
 router.get('/', (req, res) => {
@@ -6,7 +6,14 @@ router.get('/', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-    res.render('about')
+    
+    if(req.user){
+        const userName = req.user.name;
+        res.render('about', {userName});
+    } else{
+        res.render('about');
+    }
+    
 });
 
 

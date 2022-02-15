@@ -20,34 +20,22 @@
 
 <hr>
 <!-- Tasks list -->
-<div id="AppTasksList" class="row pt-3">
-    <div id="taskListHeader" class="row align-items-center pb-4 px-3" style="display: none;" >
-        <div class="col-8 text-center">
-            <strong>Task Description</strong>                   
-        </div>
-        <div class="col-3 text-center">
-            <strong>Creation date</strong>
-        </div>
-        <div class="col-1"></div>
-    </div>    
-</div>
 {{#each tasks}}
-    <div class="draggable" draggable>
-        <div class="card mb-2">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <span class="taskDescription">{{description}}</span>                    
-                    </div>
-                    <div class="col-3 text-center">
-                        <span class="taskTime">{{date}}</span>
-                    </div>
-                    <div class="col-1 text-center">
-                        <a href="#" class="btn btn-danger" name="deleteA">
-                            <i class="bi bi-trash" name="deleteI"></i>
-                        </a>
-                    </div>
+    <div class="card mb-2 card-task" >
+        <div class="card-body">
+            <div class="row align-items-center">
+                <div class="col-8">
+                    <span class="taskDescription">{{description}}</span>                    
                 </div>
+                <div class="col-3 text-center">
+                    <span class="taskTime">{{date}}</span>
+                </div>
+                <div class="col-1 text-center">
+                <a href="/tasks/deleteTask/{{_id}}" class="btn btn-danger btn-delete-note">
+                    <i class="bi bi-trash task-delete-icon"></i>
+                </a>
+                </div>
+                <span hidden>{{_id}}</span>
             </div>
         </div>
     </div>
@@ -56,4 +44,6 @@
 <div id="tasks-list" class="col"></div>
 
 
-<script src="/scripts/taskManager.js"></script>
+<script src="/toastr/toastr.min.js"></script>
+<script src="/scripts/toastrValidator.js"></script>
+<script src="/scripts/taskValidator.js"></script>

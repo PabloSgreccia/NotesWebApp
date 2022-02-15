@@ -77,3 +77,11 @@ p{
 #nav-userName {
     text-transform: capitalize;
 }
+
+.card-task {
+    background-color: rgb(208, 208, 208);
+}
+/* 
+.task-delete-icon{
+    color: rgb(177, 177, 177);
+} */

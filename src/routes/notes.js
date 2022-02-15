@@ -38,7 +38,7 @@ router.post('/notes/editNote', isAuthenticated, async (req, res) =>{
 
 // delete note
 router.get('/notes/deleteNote/:id', isAuthenticated, async (req, res) =>{
-    console.log(req.params.id);
+    //console.log(req.params.id);
     await Note.findByIdAndDelete(req.params.id);
     req.flash('success_msg', 'Note Deleted Successfully');
     res.redirect('/notes');

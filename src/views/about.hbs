@@ -1,6 +1,34 @@
 <div class="card">
     <div class="card-body">
-        <h1>About</h1>
-        <p>I'm just a guy who enjoys to make some useful tools (at least, thats what i think, i use them dayli). if you like my work, you can show me your support giving me a cup of coffee or just liking this tool clicking in the button bellow, you also can create me a note! i'll be reading it and publishing here :) </p>
+        <h2>About</h2>
+        <p>I'm just a guy who enjoys to make some useful tools (at least, thats what i think, i use them daily). if you like my work, you can show me your support giving me a cup of coffee or just liking this tool clicking in the button bellow, you also can give me some feedback! i'll be reading it and publishing here :) </p>
     </div>
 </div>
+
+<hr id="separator-line">
+
+{{#if userName}}
+<div class="card">
+    <div class="card-header">
+        <h5>Give feedback here!</h5>
+    </div>
+    <div class="card-body" >
+        <div class="row">
+            <div class="col-md-11">
+                <input type="text" id="feedbackDescription" placeholder="Write here, then click the hand that represents your comment." class="form-control bg-light" name="description">
+            </div>
+            <div class="col-md-1 d-flex justify-content-between" >
+                <a href="/dislike" class="btn btn-danger btn-delete-note" id="dislike-btn">
+                    <i class="bi bi-hand-thumbs-down"></i>        
+                </a>                  
+                <a href="/like" class="btn btn-primary btn-edit-note" id="like-btn">
+                    <i class="bi bi-hand-thumbs-up"></i>      
+                </a>                               
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+<script src="/scripts/aboutValidator.js"></script>
