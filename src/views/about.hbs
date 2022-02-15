@@ -7,28 +7,34 @@
 
 <hr id="separator-line">
 
-{{#if userName}}
 <div class="card">
     <div class="card-header">
         <h5>Give feedback here!</h5>
     </div>
     <div class="card-body" >
-        <div class="row">
-            <div class="col-md-11">
-                <input type="text" id="feedbackDescription" placeholder="Write here, then click the hand that represents your comment." class="form-control bg-light" name="description">
-            </div>
-            <div class="col-md-1 d-flex justify-content-between" >
-                <a href="/dislike" class="btn btn-danger btn-delete-note" id="dislike-btn">
-                    <i class="bi bi-hand-thumbs-down"></i>        
-                </a>                  
-                <a href="/like" class="btn btn-primary btn-edit-note" id="like-btn">
-                    <i class="bi bi-hand-thumbs-up"></i>      
-                </a>                               
-            </div>
-        </div>
+        <form action="/feedback" method="post" id="form-id">
+            <div class="row">
+                <div class="col-md-11" id="feedback-input">
+                    <input type="text" class="form-control bg-light" id="feedbackComment" name="comment" placeholder="Write here, then click the hand that represents your comment.">
+                    <input id="isPositive" name="isPositive" hidden>
+                </div>
+                <div class="col-md-1 d-flex justify-content-between" >
+                    {{!-- <input type="submit" value="Add" class="btn btn-primary w-100">   --}}
+                    <a type="submit" class="btn btn-danger btn-delete-note col-md-5" id="dislike-btn">
+                        <i class="bi bi-hand-thumbs-down"></i>    
+                        <p>{{cantNeg}}</p>   
+                    </a>                  
+                    <a type="submit" class="btn btn-primary btn-edit-note col-md-5" id="like-btn">
+                        <i class="bi bi-hand-thumbs-up"></i>  
+                        <p>{{cantPos}}</p>       
+                    </a>                               
+                </div>
+            </div> 
+        </form>
     </div>
 </div>
-{{/if}}
 
 
+<script src="/toastr/toastr.min.js"></script>
+<script src="/scripts/toastrValidator.js"></script>
 <script src="/scripts/aboutValidator.js"></script>

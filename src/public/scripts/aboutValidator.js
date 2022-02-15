@@ -1,33 +1,19 @@
 document.getElementById('dislike-btn').addEventListener('click', function(e){
-    const feedbackDescription =  document.getElementById('feedbackDescription').value;
-    if(feedbackDescription === ''){
-        e.preventDefault();
-    } else{
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.countapi.xyz/hit/localhost:400/dislikeclick");
-        xhr.responseType = "json";
-        xhr.onload = function() {
-            alert(`This button has been clicked ${this.response.value} times!`);
-        }
-        xhr.send();
-    }
+    console.log('hola buenas');
+    isEmpty(e, false);
 })
 document.getElementById('like-btn').addEventListener('click', function(e){
-    const feedbackDescription =  document.getElementById('feedbackDescription').value;
-    if(feedbackDescription === ''){
-        e.preventDefault();
-    } else{
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.countapi.xyz/hit/localhost:400/likeclick");
-        xhr.responseType = "json";
-        xhr.onload = function() {
-            alert(`This button has been clicked ${this.response.value} times!`);
-        }
-        xhr.send();
-    }
+    isEmpty(e, true);
 })
 
-
-function liveViews(response) {
-    document.getElementById('visits').innerText = response.value;
+function isEmpty(e, option) {
+    const feedbackDescription =  document.getElementById('feedbackComment').value;
+    if(feedbackDescription === ''){
+        e.preventDefault();
+    } else {
+        document.getElementById('isPositive'). value = option;
+        var form = document.getElementById("form-id");
+        form.submit();
+    }
 }
+
