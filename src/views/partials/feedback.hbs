@@ -9,15 +9,15 @@
                       <input type="text" class="form-control bg-light" id="feedbackComment" name="comment" placeholder="Write here, then click the hand that represents your comment.">
                       <input id="isPositive" name="isPositive" hidden>
                   </div>
-                  <div class="d-flex" id="feedback-buttons">
-                      <a type="submit" class="btn btn-danger btn-delete-note feedback-button" id="dislike-btn">
-                          <i class="bi bi-hand-thumbs-down"></i>    
-                          <p>{{cantNeg}}</p>   
-                      </a>                  
-                      <a type="submit" class="btn btn-primary btn-edit-note feedback-button" id="like-btn">
-                          <i class="bi bi-hand-thumbs-up"></i>  
-                          <p>{{cantPos}}</p>       
-                      </a>                               
+                  <div class="d-flex justify-content-center" id="feedback-buttons">
+                        <a type="submit" class="btn btn-danger btn-delete-note" id="dislike-btn">
+                            <i class="bi bi-hand-thumbs-down"></i>    
+                            <span>{{cantNeg}}</span>
+                        </a>                  
+                        <a type="submit" class="btn btn-primary btn-edit-note" id="like-btn">
+                            <i class="bi bi-hand-thumbs-up"></i>  
+                            <span>{{cantPos}}</span>       
+                        </a>                               
                   </div>
               </div> 
           </form>

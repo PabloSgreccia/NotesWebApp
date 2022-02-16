@@ -89,16 +89,14 @@ p{
 
 #feedback-buttons{
     margin: 0 auto;
-    width: 15%;
-}
-
-.feedback-button{
-    width: 100%;
+    width: 25%;
 }
 
 #dislike-btn{
+    width: 30%;
     margin-right: 5%;
 }
 #like-btn{
+    width: 30%;
     margin-left: 5%;
 }
