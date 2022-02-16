@@ -1,9 +1,38 @@
 <div class="card p-3">
-  <h1 class="display-4">Notes Web App</h1>
-  <p class="lead">This is a simple tool to manage your notes, here you can create, modify and delete notes, saving it into the cloud and accessing from everywhere (obviously, with internet connection).</p>
-  <hr class="my-4">
-  <p>if you liked this tool, it's probably that you also likes other tool to manage your daily tasks and activities, check it clicking the button below.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="http://localhost:3000/" target="_blank" role="button">Try Tasks Manager app!</a>
-  </p>
-</div>
+  <h1 class="display-14">Notes Web App</h1>
+  <p class="lead">This is a simple tool to manage your notes and tasks, here you can create, modify and delete notes and tasks, saving them into the cloud and accessing from everywhere (obviously, with internet connection).</p>
+  <p class="mb-2">if you liked this tool, you can give me some feedback... I'll be reading you!</p>
+</div>  
+
+  <hr>
+
+<div class="card">
+      <div class="card-header">
+          <h5>Give feedback here!</h5>
+      </div>
+      <div class="card-body" >
+          <form action="/feedbackIndex" method="post" id="form-id">
+              <div class="row">
+                  <div class="col-md-11" id="feedback-input">
+                      <input type="text" class="form-control bg-light" id="feedbackComment" name="comment" placeholder="Write here, then click the hand that represents your comment.">
+                      
+                      <input id="isPositive" name="isPositive" hidden>
+                  </div>
+                  <div class="col-md-1 d-flex justify-content-between" >
+                      <a type="submit" class="btn btn-danger btn-delete-note col-md-5" id="dislike-btn">
+                          <i class="bi bi-hand-thumbs-down"></i>    
+                          <p>{{cantNeg}}</p>   
+                      </a>                  
+                      <a type="submit" class="btn btn-primary btn-edit-note col-md-5" id="like-btn">
+                          <i class="bi bi-hand-thumbs-up"></i>  
+                          <p>{{cantPos}}</p>       
+                      </a>                               
+                  </div>
+              </div> 
+          </form>
+      </div>
+  </div>
+
+  <script src="/toastr/toastr.min.js"></script>
+  <script src="/scripts/toastrValidator.js"></script>
+  <script src="/scripts/aboutValidator.js"></script>
