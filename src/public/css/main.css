@@ -84,4 +84,21 @@ p{
 
 #feedback-input{
     margin: auto 0;
+    width: 75%;
+}
+
+#feedback-buttons{
+    margin: 0 auto;
+    width: 15%;
+}
+
+.feedback-button{
+    width: 100%;
+}
+
+#dislike-btn{
+    margin-right: 5%;
+}
+#like-btn{
+    margin-left: 5%;
 }

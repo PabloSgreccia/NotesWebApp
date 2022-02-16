@@ -1,0 +1,29 @@
+<div class="card">
+      <div class="card-header">
+          <h5>Give feedback here!</h5>
+      </div>
+      <div class="card-body" >
+          <form action="/feedbackIndex" method="post" id="form-id">
+              <div class="row d-flex">
+                  <div id="feedback-input">
+                      <input type="text" class="form-control bg-light" id="feedbackComment" name="comment" placeholder="Write here, then click the hand that represents your comment.">
+                      <input id="isPositive" name="isPositive" hidden>
+                  </div>
+                  <div class="d-flex" id="feedback-buttons">
+                      <a type="submit" class="btn btn-danger btn-delete-note feedback-button" id="dislike-btn">
+                          <i class="bi bi-hand-thumbs-down"></i>    
+                          <p>{{cantNeg}}</p>   
+                      </a>                  
+                      <a type="submit" class="btn btn-primary btn-edit-note feedback-button" id="like-btn">
+                          <i class="bi bi-hand-thumbs-up"></i>  
+                          <p>{{cantPos}}</p>       
+                      </a>                               
+                  </div>
+              </div> 
+          </form>
+      </div>
+  </div>
+
+  <script src="/toastr/toastr.min.js"></script>
+  <script src="/scripts/toastrValidator.js"></script>
+  <script src="/scripts/aboutValidator.js"></script>
